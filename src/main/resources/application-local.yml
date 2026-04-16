@@ -1,0 +1,11 @@
+consumer:
+    enable: false
+    mode: QUEUE
+springdoc:
+    api-docs:
+        enabled: true
+    swagger-ui:
+        enabled: true
+llm:
+  service:
+    url: ${GENERAL_GPT_SERVICE_URL:}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Base logback configuration provided for compatibility with Spring Boot 1.1
+-->
+
+<included>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="springAppName" source="spring.application.name"
+                    defaultValue="llm-workflow-service"/>
+    <springProperty scope="context" name="LOG_PATH" source="logging.path" defaultValue="./logs"/>
+    <conversionRule conversionWord="m" converterClass="com.gemantic.log.GemanticLogConverter" />
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %level [${springAppName:-}] %logger{15} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <property name="FILE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %level [${springAppName:-}] %logger{15} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <property name="FILE_SHORT_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %m%n"/>
+
+    <property name="LOG_FILE" value="${LOG_PATH}/spring.log"/>
+    <!--<property name="EXTRACT_LOG_FILE" value="${LOG_PATH}/extract.log"/>
+    <property name="WORKFLOW_LOG_FILE" value="${LOG_PATH}/workflow.log"/>
+    <property name="SIMPLE_PROMPT_LOG_FILE" value="${LOG_PATH}/simplePrompt.log"/>
+    <property name="LIST_PROMPT_LOG_FILE" value="${LOG_PATH}/listPrompt.log"/>
+&lt;!&ndash;
+    <property name="CHAT_FINANCE_LOG_FILE" value="${LOG_PATH}/ChatFinance.log"/>
+    <property name="CHAT_DOC_LOG_FILE" value="${LOG_PATH}/ChatDoc.log"/>
+&ndash;&gt;
+    <property name="INTERNET_SEARCH_LOG_FILE" value="${LOG_PATH}/internetSearch.log"/>
+    <property name="SUB_WORKFLOW_LOG_FILE" value="${LOG_PATH}/subWorkflow.log"/>
+    <property name="CHAT_DB_LOG_FILE" value="${LOG_PATH}/ChatDb.log"/>
+    <property name="PUBLISH_LOG_FILE" value="${LOG_PATH}/publish.log"/>
+    <property name="QCHECK_LOG_FILE" value="${LOG_PATH}/QCheck.log"/>
+    <property name="QDATA_LOG_FILE" value="${LOG_PATH}/QData.log"/>
+    <property name="QDOC_LOG_FILE" value="${LOG_PATH}/QDoc.log"/>
+    <property name="QDB_LOG_FILE" value="${LOG_PATH}/QDb.log"/>-->
+
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <include resource="logfile-appender.xml"/>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</included>

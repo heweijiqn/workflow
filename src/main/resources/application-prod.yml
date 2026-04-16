@@ -1,0 +1,8 @@
+chat:
+    finance:
+        ws:
+            url: ${CHAT_FINANCE_WS_URL:}
+#server:
+#    undertow:
+#        accesslog:
+#            enabled: false

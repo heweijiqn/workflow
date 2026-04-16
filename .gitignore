@@ -1,0 +1,38 @@
+/target/
+.mvn/wrapper/maven-wrapper.jar
+**/.DS_Store
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+target
+.git
+### VS Code ###
+.vscode/
+**/rebel.xml
+**/rebel-remote.xml
+logs
+
+.cursor/
+hs_err_pid*.log
+
+.java-version

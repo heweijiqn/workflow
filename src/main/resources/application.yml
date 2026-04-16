@@ -1,0 +1,146 @@
+consumer:
+    batchSize: ${CONSUMER_BATCH_SIZE:10}
+    concurrent: ${CONSUMER_CONCURRENT:true}
+    enable: true
+    intervalMilliseconds: 1000
+    mode: QUEUE
+    virtualThread:
+        scheduler:
+            parallelism: ${CONSUMER_VT_SCHEDULER_PARALLELISM:0}
+            maxPoolSize: ${CONSUMER_VT_SCHEDULER_MAX_POOL_SIZE:0}
+            minRunnable: ${CONSUMER_VT_SCHEDULER_MIN_RUNNABLE:0}
+feign:
+    httpclient:
+        enabled: false
+    hystrix:
+        enabled: true
+    okhttp:
+        enabled: true
+hystrix:
+    command:
+        default:
+            circuitBreaker:
+                requestVolumeThreshold: 2000
+                sleepWindowInMilliseconds: 1000
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 300000
+                timeout:
+                    enabled: true
+    threadpool:
+        default:
+            coreSize: 100
+            maxQueueSize: 2000
+            maximumSize: 100
+            queueSizeRejectionThreshold: 2000
+logging:
+    logback:
+        history: ${LOG_MAX_HISTORY:7}
+    path: ./logs
+management:
+  server:
+    port: 8500
+  endpoints:
+    web:
+      exposure:
+        include: health,loggers
+      base-path: /ar
+  endpoint:
+    loggers:
+      enabled: true
+  health:
+        elasticsearch:
+            enabled: false
+memory:
+    node:
+        timeout: 15
+node:
+    run:
+        timeout:
+            milliseconds: 1800000
+    timeout:
+        interval:
+            minute: 10
+okhttp:
+    callTimeout: ${OKHTTP_CALL_TIMEOUT:1200}
+    connectTimeout: ${OKHTTP_CONNECT_TIMEOUT:30}
+    pool:
+        keepAliveDuration: ${OKHTTP_POOL_KEEP_ALIVE_DURATION:300}
+        maxIdleConnections: ${OKHTTP_POOL_MAX_IDLE_CONNECTIONS:100}
+    readTimeout: ${OKHTTP_READ_TIMEOUT:600}
+    writeTimeout: ${OKHTTP_WRITE_TIMEOUT:600}
+ribbon:
+    ConnectTimeout: 15000
+    ReadTimeout: 300000
+server:
+    compression:
+        enabled: true
+        mime-types: application/json
+    port: 31001
+    shutdown: graceful
+    undertow:
+        accesslog:
+            enabled: true
+            max-history: ${ACCESS_LOG_HISTORY:1}
+            pattern: '[%{time,yyyy-MM-dd HH:mm:ss.S}] %a "%r" %s %D'
+            rotate: true
+        buffer-size: 1024
+        buffers-per-region: 1024
+        direct-buffers: true
+        io-threads: 16
+        worker-threads: 200
+spring:
+    application:
+        name: llm-workflow-service
+    cloud:
+        openfeign:
+            client:
+                config:
+                    default:
+                        connectTimeout: 15000
+                        readTimeout: 600000
+    http:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+    lifecycle:
+        timeout-per-shutdown-phase: 30s
+    main:
+        allow-bean-definition-overriding: true
+    mvc:
+        favicon:
+            enabled: false
+        throw-exception-if-no-handler-found: true
+    profiles:
+        active: ${PROFILES_ACTIVE:local}
+springdoc:
+    api-docs:
+        enabled: false
+    swagger-ui:
+        enabled: false
+sqlQuery:
+    limit: 500
+financial:
+    statement:
+        api:
+            url: ${FINANCIAL_STATEMENT_API_URL:}
+subWorkflowList:
+    batchSize: ${SUB_WORKFLOW_LIST_BATCH_SIZE:50}
+    concurrent: ${SUB_WORKFLOW_LIST_CONCURRENT:true}
+subworkflow:
+    status:
+        job:
+            milliseconds: 120000
+timeout:
+    job:
+        milliseconds: 1800000
+wait:
+    refresh:
+        time: ${ES_REFRESH_TIME:1000}
+workflow:
+    run:
+        version: ${LLM_WORKFLOW_SERVICE_RUN_VERSION:true}
+    task:
+        execution: ${LLM_WORKFLOW_SERVICE_TASK_EXECUTION:true}

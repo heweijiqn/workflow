@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gemantic.springframework</groupId>
+        <artifactId>spring-boot-gemantic-service-parent</artifactId>
+        <version>3.5.6</version>
+    </parent>
+    <groupId>com.gemantic.chatgpt</groupId>
+    <artifactId>llm-workflow-service</artifactId>
+    <version>5.2-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <logback.version>1.5.26</logback.version>
+        <fastjson2.version>2.0.55</fastjson2.version>
+        <chatgpt-db-core.version>5.1</chatgpt-db-core.version>
+        <springcloud-commons-core.version>21.3.1</springcloud-commons-core.version>
+        <springcloud-commons-tools.version>21.3.0</springcloud-commons-tools.version>
+        <duckdb_jdbc.version>1.1.1</duckdb_jdbc.version>
+        <postgresql.version>42.7.8</postgresql.version>
+        <log4j-api.version>2.25.3</log4j-api.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <langchain4j.version>0.30.0</langchain4j.version>
+        <langgraph4j.version>1.8.4</langgraph4j.version>
+    </properties>
+    <dependencies>
+        <!-- LangChain4j -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-core</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+
+
+        <!-- LangGraph4j -->
+        <dependency>
+            <groupId>org.bsc.langgraph4j</groupId>
+            <artifactId>langgraph4j-core</artifactId>
+            <version>${langgraph4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gemantic.springcloud</groupId>
+            <artifactId>springcloud-commons-core</artifactId>
+            <version>${springcloud-commons-core.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xalan</groupId>
+                    <artifactId>xalan</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.gemantic.springcloud</groupId>
+            <artifactId>springcloud-commons-tools</artifactId>
+            <version>${springcloud-commons-tools.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.gemantic.springcloud</groupId>
+                    <artifactId>springcloud-commons-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xalan</groupId>
+                    <artifactId>xalan</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.duckdb</groupId>
+            <artifactId>duckdb_jdbc</artifactId>
+            <version>${duckdb_jdbc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.kingbase</groupId>
+            <artifactId>kingbase8</artifactId>
+            <version>${kingbase.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.31</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vladsch.flexmark</groupId>
+            <artifactId>flexmark-all</artifactId>
+            <version>0.64.8</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

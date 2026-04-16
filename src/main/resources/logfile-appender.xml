@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+    <springProperty scope="context" name="MAX_HISTORY" source="logging.logback.history" defaultValue="7"/>
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>${MAX_HISTORY}</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+   <!-- <appender name="EXTRACT_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${EXTRACT_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${EXTERNAL_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+    <appender name="WORKFLOW_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${WORKFLOW_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${WORKFLOW_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    &lt;!&ndash;<appender name="CHAT_FINANCE_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${CHAT_FINANCE_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${CHAT_FINANCE_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+    <appender name="CHAT_DOC_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${CHAT_DOC_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${CHAT_DOC_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>&ndash;&gt;
+
+
+    <appender name="LIST_PROMPT_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${LIST_PROMPT_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LIST_PROMPT_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+    <appender name="SIMPLE_PROMPT_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${SIMPLE_PROMPT_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${SIMPLE_PROMPT_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="INTERNET_SEARCH_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${INTERNET_SEARCH_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${INTERNET_SEARCH_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="SUB_WORKFLOW_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${SUB_WORKFLOW_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${SUB_WORKFLOW_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CHAT_DB_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${CHAT_DB_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${CHAT_DB_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="QCHECK_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${QCHECK_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${QCHECK_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="PUBLISH_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${PUBLISH_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${PUBLISH_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="QDOC_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${QDOC_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${QDOC_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="QDATA_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${QDATA_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${QDATA_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="QDB_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_SHORT_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>${QDB_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${QDB_LOG_FILE}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+    </appender>-->
+
+</included>
