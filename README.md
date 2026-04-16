@@ -1,4 +1,4 @@
-# LLM Workflow Service
+# Workflow Service
 
 一个基于LangChain4j和LangGraph4j的工作流服务，用于执行复杂的LLM工作流。
 
