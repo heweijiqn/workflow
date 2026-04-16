@@ -1,7 +1,7 @@
 # Workflow Service
 
 一个基于LangChain4j和LangGraph4j的工作流服务，用于执行复杂的LLM工作流。
-
+参考的朋友可以给个⭐⭐不
 ## 项目结构
 
 ```
